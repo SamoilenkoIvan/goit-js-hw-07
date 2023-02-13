@@ -5,7 +5,7 @@ const imageList = galleryItems
   .map(({ preview, original, description }) => {
     return `<div class="gallery__item">
         <a class="gallery__link" href="${original}">
-        <image class="gallery__image"
+        <img class="gallery__image"
         src="${preview}"
         data-source="${original}"
         alt="${description}"
@@ -18,7 +18,7 @@ gallery.insertAdjacentHTML("afterbegin", imageList);
 gallery.addEventListener("click", onImageOriginalCard);
 function onImageOriginalCard(event) {
   event.preventDefault();
-  if (!event.target.dataset.source) {
+  if (event.target.nodeName !== "IMG") {
     return;
   }
   console.log(event.target);
