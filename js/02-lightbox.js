@@ -8,9 +8,11 @@ const imageList = galleryItems
   </a>`;
   })
   .join("");
+
 gallery.innerHTML = imageList;
+
 let lightbox = new SimpleLightbox(".gallery a", {
   captionDelay: 250,
   captionsData: "alt",
 });
-console.log(galleryItems);
+

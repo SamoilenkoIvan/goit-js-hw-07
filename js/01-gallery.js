@@ -9,13 +9,14 @@ const imageList = galleryItems
         src="${preview}"
         data-source="${original}"
         alt="${description}"
-        /img>
+        />
         </a>
         </div>`;
   })
   .join("");
 gallery.insertAdjacentHTML("afterbegin", imageList);
 gallery.addEventListener("click", onImageOriginalCard);
+
 function onImageOriginalCard(event) {
   event.preventDefault();
   if (event.target.nodeName !== "IMG") {
@@ -27,4 +28,4 @@ function onImageOriginalCard(event) {
 `);
   instance.show();
 }
-console.log(galleryItems);
+
